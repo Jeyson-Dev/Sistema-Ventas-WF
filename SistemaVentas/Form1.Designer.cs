@@ -41,7 +41,7 @@
             txtCantidad = new TextBox();
             lblMostrarCantidad = new Label();
             lblCantidad = new Label();
-            button2 = new Button();
+            btnRegistrar = new Button();
             btnCancelar = new Button();
             lblMostrarPrecio = new Label();
             lblPrecio = new Label();
@@ -159,7 +159,7 @@
             grpDatosVenta.Controls.Add(txtCantidad);
             grpDatosVenta.Controls.Add(lblMostrarCantidad);
             grpDatosVenta.Controls.Add(lblCantidad);
-            grpDatosVenta.Controls.Add(button2);
+            grpDatosVenta.Controls.Add(btnRegistrar);
             grpDatosVenta.Controls.Add(btnCancelar);
             grpDatosVenta.Controls.Add(lblMostrarPrecio);
             grpDatosVenta.Controls.Add(lblPrecio);
@@ -200,16 +200,17 @@
             lblCantidad.TabIndex = 8;
             lblCantidad.Text = "CANTIDAD";
             // 
-            // button2
+            // btnRegistrar
             // 
-            button2.BackColor = Color.LightSteelBlue;
-            button2.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(736, 94);
-            button2.Name = "button2";
-            button2.Size = new Size(258, 76);
-            button2.TabIndex = 7;
-            button2.Text = "REGISTRAR";
-            button2.UseVisualStyleBackColor = false;
+            btnRegistrar.BackColor = Color.LightSteelBlue;
+            btnRegistrar.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrar.Location = new Point(736, 94);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(258, 76);
+            btnRegistrar.TabIndex = 7;
+            btnRegistrar.Text = "REGISTRAR";
+            btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnCancelar
             // 
@@ -221,12 +222,13 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // lblMostrarPrecio
             // 
             lblMostrarPrecio.AutoSize = true;
             lblMostrarPrecio.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMostrarPrecio.Location = new Point(620, 94);
+            lblMostrarPrecio.Location = new Point(608, 94);
             lblMostrarPrecio.Name = "lblMostrarPrecio";
             lblMostrarPrecio.Size = new Size(83, 22);
             lblMostrarPrecio.TabIndex = 5;
@@ -236,7 +238,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(620, 51);
+            lblPrecio.Location = new Point(608, 51);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(85, 22);
             lblPrecio.TabIndex = 4;
@@ -249,6 +251,7 @@
             cobProducto.Name = "cobProducto";
             cobProducto.Size = new Size(382, 30);
             cobProducto.TabIndex = 2;
+            cobProducto.SelectedIndexChanged += cobProducto_SelectedIndexChanged;
             // 
             // lblProducto
             // 
@@ -336,6 +339,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "frmSistemaVentas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Ventas";
             Load += frmSistemaVentas_Load;
             grpDatosCliente.ResumeLayout(false);
@@ -367,7 +371,7 @@
         private ComboBox cobProducto;
         private Label lblMostrarHora;
         private Label lblMostrarFecha;
-        private Button button2;
+        private Button btnRegistrar;
         private ListView lvDetalles;
         private ColumnHeader chProducto;
         private ColumnHeader chCantidad;
