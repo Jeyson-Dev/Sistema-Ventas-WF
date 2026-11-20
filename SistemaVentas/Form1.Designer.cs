@@ -30,7 +30,7 @@
         {
             lblTitulo = new Label();
             grpDatosCliente = new GroupBox();
-            textBox1 = new TextBox();
+            txtCliente = new TextBox();
             lblCliente = new Label();
             lblHora = new Label();
             pnlFecha = new Panel();
@@ -38,11 +38,14 @@
             lblMostrarFecha = new Label();
             lblFecha = new Label();
             grpDatosVenta = new GroupBox();
+            txtCantidad = new TextBox();
+            lblMostrarCantidad = new Label();
+            lblCantidad = new Label();
             button2 = new Button();
             btnCancelar = new Button();
             lblMostrarPrecio = new Label();
             lblPrecio = new Label();
-            comboBox1 = new ComboBox();
+            cobProducto = new ComboBox();
             lblProducto = new Label();
             lvDetalles = new ListView();
             chProducto = new ColumnHeader();
@@ -71,7 +74,7 @@
             // grpDatosCliente
             // 
             grpDatosCliente.BackColor = SystemColors.ControlLight;
-            grpDatosCliente.Controls.Add(textBox1);
+            grpDatosCliente.Controls.Add(txtCliente);
             grpDatosCliente.Controls.Add(lblCliente);
             grpDatosCliente.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grpDatosCliente.Location = new Point(30, 71);
@@ -80,12 +83,13 @@
             grpDatosCliente.TabIndex = 1;
             grpDatosCliente.TabStop = false;
             // 
-            // textBox1
+            // txtCliente
             // 
-            textBox1.Location = new Point(35, 62);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(526, 29);
-            textBox1.TabIndex = 1;
+            txtCliente.Location = new Point(35, 62);
+            txtCliente.Name = "txtCliente";
+            txtCliente.PlaceholderText = "Introduzca nombre del cliente";
+            txtCliente.Size = new Size(526, 29);
+            txtCliente.TabIndex = 1;
             // 
             // lblCliente
             // 
@@ -123,7 +127,7 @@
             // 
             lblMostrarHora.AutoSize = true;
             lblMostrarHora.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMostrarHora.Location = new Point(245, 78);
+            lblMostrarHora.Location = new Point(226, 78);
             lblMostrarHora.Name = "lblMostrarHora";
             lblMostrarHora.Size = new Size(75, 22);
             lblMostrarHora.TabIndex = 5;
@@ -133,7 +137,7 @@
             // 
             lblMostrarFecha.AutoSize = true;
             lblMostrarFecha.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMostrarFecha.Location = new Point(60, 78);
+            lblMostrarFecha.Location = new Point(47, 78);
             lblMostrarFecha.Name = "lblMostrarFecha";
             lblMostrarFecha.Size = new Size(75, 22);
             lblMostrarFecha.TabIndex = 4;
@@ -152,11 +156,14 @@
             // grpDatosVenta
             // 
             grpDatosVenta.BackColor = SystemColors.ControlLight;
+            grpDatosVenta.Controls.Add(txtCantidad);
+            grpDatosVenta.Controls.Add(lblMostrarCantidad);
+            grpDatosVenta.Controls.Add(lblCantidad);
             grpDatosVenta.Controls.Add(button2);
             grpDatosVenta.Controls.Add(btnCancelar);
             grpDatosVenta.Controls.Add(lblMostrarPrecio);
             grpDatosVenta.Controls.Add(lblPrecio);
-            grpDatosVenta.Controls.Add(comboBox1);
+            grpDatosVenta.Controls.Add(cobProducto);
             grpDatosVenta.Controls.Add(lblProducto);
             grpDatosVenta.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grpDatosVenta.Location = new Point(31, 257);
@@ -166,13 +173,40 @@
             grpDatosVenta.TabStop = false;
             grpDatosVenta.Text = "Datos de la Venta";
             // 
+            // txtCantidad
+            // 
+            txtCantidad.Location = new Point(464, 91);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.PlaceholderText = "0";
+            txtCantidad.Size = new Size(109, 29);
+            txtCantidad.TabIndex = 10;
+            // 
+            // lblMostrarCantidad
+            // 
+            lblMostrarCantidad.AutoSize = true;
+            lblMostrarCantidad.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMostrarCantidad.Location = new Point(499, 94);
+            lblMostrarCantidad.Name = "lblMostrarCantidad";
+            lblMostrarCantidad.Size = new Size(0, 22);
+            lblMostrarCantidad.TabIndex = 9;
+            // 
+            // lblCantidad
+            // 
+            lblCantidad.AutoSize = true;
+            lblCantidad.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidad.Location = new Point(464, 52);
+            lblCantidad.Name = "lblCantidad";
+            lblCantidad.Size = new Size(109, 22);
+            lblCantidad.TabIndex = 8;
+            lblCantidad.Text = "CANTIDAD";
+            // 
             // button2
             // 
             button2.BackColor = Color.LightSteelBlue;
             button2.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(678, 95);
+            button2.Location = new Point(736, 94);
             button2.Name = "button2";
-            button2.Size = new Size(293, 68);
+            button2.Size = new Size(258, 76);
             button2.TabIndex = 7;
             button2.Text = "REGISTRAR";
             button2.UseVisualStyleBackColor = false;
@@ -181,9 +215,9 @@
             // 
             btnCancelar.BackColor = Color.LightCoral;
             btnCancelar.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(678, 21);
+            btnCancelar.Location = new Point(736, 20);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(293, 68);
+            btnCancelar.Size = new Size(258, 76);
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -191,10 +225,10 @@
             // lblMostrarPrecio
             // 
             lblMostrarPrecio.AutoSize = true;
-            lblMostrarPrecio.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMostrarPrecio.Location = new Point(486, 95);
+            lblMostrarPrecio.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMostrarPrecio.Location = new Point(620, 94);
             lblMostrarPrecio.Name = "lblMostrarPrecio";
-            lblMostrarPrecio.Size = new Size(85, 22);
+            lblMostrarPrecio.Size = new Size(83, 22);
             lblMostrarPrecio.TabIndex = 5;
             lblMostrarPrecio.Text = "PRECIO";
             // 
@@ -202,19 +236,19 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(486, 52);
+            lblPrecio.Location = new Point(620, 51);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(85, 22);
             lblPrecio.TabIndex = 4;
             lblPrecio.Text = "PRECIO";
             // 
-            // comboBox1
+            // cobProducto
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(35, 87);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(382, 30);
-            comboBox1.TabIndex = 2;
+            cobProducto.FormattingEnabled = true;
+            cobProducto.Location = new Point(35, 87);
+            cobProducto.Name = "cobProducto";
+            cobProducto.Size = new Size(382, 30);
+            cobProducto.TabIndex = 2;
             // 
             // lblProducto
             // 
@@ -299,8 +333,11 @@
             Controls.Add(pnlFecha);
             Controls.Add(grpDatosCliente);
             Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "frmSistemaVentas";
             Text = "Sistema de Ventas";
+            Load += frmSistemaVentas_Load;
             grpDatosCliente.ResumeLayout(false);
             grpDatosCliente.PerformLayout();
             pnlFecha.ResumeLayout(false);
@@ -316,7 +353,7 @@
         private Label lblTitulo;
         private GroupBox grpDatosCliente;
         private Label lblCliente;
-        private TextBox textBox1;
+        private TextBox txtCliente;
         private Label lblHora;
         private Panel pnlFecha;
         private Label label2;
@@ -327,7 +364,7 @@
         private Button btnCancelar;
         private Label lblMostrarPrecio;
         private Label lblPrecio;
-        private ComboBox comboBox1;
+        private ComboBox cobProducto;
         private Label lblMostrarHora;
         private Label lblMostrarFecha;
         private Button button2;
@@ -339,5 +376,8 @@
         private ColumnHeader chDescuento;
         private ColumnHeader chNeto;
         private Label lblMostrarNeto;
+        private Label lblMostrarCantidad;
+        private Label lblCantidad;
+        private TextBox txtCantidad;
     }
 }
